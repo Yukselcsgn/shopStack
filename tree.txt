@@ -1,0 +1,129 @@
+shopstack/
+ common/ src/ main/java/com/shopstack/common/ exception/ security/ dto/ utils/ main/resources/ test/java/
+auth-service/ src/ main/java/com/shopstack/auth/ controller/ service/ service/impl/ repository/ config/ domain/ mapper/ main/resources/ application.yml test/java/
+catalog-service/ src/ main/java/com/shopstack/catalog/ controller/ service/ service/impl/ repository/ config/ domain/ mapper/ main/resources/ test/java/
+order-service/ src/ main/java/com/shopstack/order/ controller/ service/ service/impl/ repository/ domain/ config/ outbox/ mapper/ main/resources/ test/java/
+inventory-service/ src/ main/java/com/shopstack/inventory/ controller/ service/ service/impl/ repository/ domain/ config/ mapper/ main/resources/ test/java/
+api-gateway/ src/ main/java/com/shopstack/gateway/ config/ filters/ main/resources/ application.yml test/java/
+docker/ docker-compose.dev.yml Dockerfile.auth Dockerfile.catalog Dockerfile.order Dockerfile.inventory Dockerfile.gateway
+helm/ shopstack/ Chart.yaml values.yaml templates/ deployment.yaml service.yaml ingress.yaml hpa.yaml configmap.yaml secrets.yaml
+k8s/ base/ namespace.yaml postgres/ statefulset.yaml service.yaml pvc.yaml mongo/ statefulset.yaml service.yaml pvc.yaml overlays/ dev/ kustomization.yaml stage/ kustomization.yaml prod/ kustomization.yaml
+docs/ architecture.md openapi/ auth-api.yaml catalog-api.yaml order-api.yaml inventory-api.yaml
+.github/ workflows/ ci.yml
+
+
+shopstack/
+├── common/
+│   └── src/
+│       └── main/
+│           └── java/com/shopstack/common/
+│               ├── exception/
+│               ├── security/
+│               ├── dto/
+│               └── utils/
+├── auth-service/
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/shopstack/auth/
+│       │   │   ├── controller/
+│       │   │   ├── service/
+│       │   │   │   └── impl/
+│       │   │   ├── repository/
+│       │   │   ├── config/
+│       │   │   ├── domain/
+│       │   │   └── mapper/
+│       │   └── resources/
+│       │       └── application.yml
+│       └── test/java/
+├── catalog-service/
+│   └── src/
+│       ├── main/
+│       │   └── java/com/shopstack/catalog/
+│       │       ├── controller/
+│       │       ├── service/
+│       │       │   └── impl/
+│       │       ├── repository/
+│       │       ├── config/
+│       │       ├── domain/
+│       │       └── mapper/
+│       └── test/java/
+├── order-service/
+│   └── src/
+│       ├── main/
+│       │   └── java/com/shopstack/order/
+│       │       ├── controller/
+│       │       ├── service/
+│       │       │   └── impl/
+│       │       ├── repository/
+│       │       ├── domain/
+│       │       ├── config/
+│       │       ├── outbox/
+│       │       └── mapper/
+│       └── test/java/
+├── inventory-service/
+│   └── src/
+│       ├── main/
+│       │   └── java/com/shopstack/inventory/
+│       │       ├── controller/
+│       │       ├── service/
+│       │       │   └── impl/
+│       │       ├── repository/
+│       │       ├── domain/
+│       │       ├── config/
+│       │       └── mapper/
+│       └── test/java/
+├── api-gateway/
+│   └── src/
+│       ├── main/
+│       │   └── java/com/shopstack/gateway/
+│       │       ├── config/
+│       │       └── filters/
+│       │   └── resources/
+│       │       └── application.yml
+│       └── test/java/
+├── docker/
+│   ├── docker-compose.dev.yml
+│   ├── Dockerfile.auth
+│   ├── Dockerfile.catalog
+│   ├── Dockerfile.order
+│   ├── Dockerfile.inventory
+│   └── Dockerfile.gateway
+├── helm/
+│   └── shopstack/
+│       ├── Chart.yaml
+│       ├── values.yaml
+│       └── templates/
+│           ├── deployment.yaml
+│           ├── service.yaml
+│           ├── ingress.yaml
+│           ├── hpa.yaml
+│           ├── configmap.yaml
+│           └── secrets.yaml
+├── k8s/
+│   ├── base/
+│   │   ├── namespace.yaml
+│   │   ├── postgres/
+│   │   │   ├── statefulset.yaml
+│   │   │   ├── service.yaml
+│   │   │   └── pvc.yaml
+│   │   └── mongo/
+│   │       ├── statefulset.yaml
+│   │       ├── service.yaml
+│   │       └── pvc.yaml
+│   └── overlays/
+│       ├── dev/
+│       │   └── kustomization.yaml
+│       ├── stage/
+│       │   └── kustomization.yaml
+│       └── prod/
+│           └── kustomization.yaml
+├── docs/
+│   ├── architecture.md
+│   └── openapi/
+│       ├── auth-api.yaml
+│       ├── catalog-api.yaml
+│       ├── order-api.yaml
+│       └── inventory-api.yaml
+└── .github/
+    └── workflows/
+        └── ci.yml
