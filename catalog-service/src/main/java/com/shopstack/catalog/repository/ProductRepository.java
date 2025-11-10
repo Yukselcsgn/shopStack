@@ -1,0 +1,15 @@
+package com.shopstack.catalog.repository;
+
+import com.shopstack.catalog.domain.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProductRepository extends JpaRepository<Product, Long>{
+
+    List<Product> findByCategoryID(Long, categoryId);
+
+    List<Product> findByBrandId(Long brandId);
+
+    List<Product> findByNameContainingIgnoreCase(String name);
+}
