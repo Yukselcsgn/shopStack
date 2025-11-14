@@ -1,1 +1,8 @@
 rootProject.name = 'shopStack'
+
+include 'api-gateway'
+include 'auth-service'
+include 'catalog-service'
+include 'order-service'
+include 'inventory-service'
+include 'common'
