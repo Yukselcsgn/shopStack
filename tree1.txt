@@ -1,0 +1,474 @@
+D:.
+├───.github
+│   └───workflows
+├───.gradle
+│   ├───8.14
+│   │   ├───checksums
+│   │   ├───executionHistory
+│   │   ├───expanded
+│   │   ├───fileChanges
+│   │   ├───fileHashes
+│   │   └───vcsMetadata
+│   ├───buildOutputCleanup
+│   └───vcs-1
+├───.idea
+├───api-gateway
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───shopstack
+│   │       │           └───gateway
+│   │       │               ├───config
+│   │       │               └───filters
+│   │       └───resources
+│   └───test
+│       └───java
+├───auth-service
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───shopstack
+│   │       │           └───auth
+│   │       │               ├───config
+│   │       │               ├───controller
+│   │       │               ├───domain
+│   │       │               ├───dto
+│   │       │               ├───mapper
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       │                   └───impl
+│   │       └───resources
+│   └───test
+│       └───java
+├───build
+│   └───reports
+│       └───problems
+├───catalog-service
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───shopstack
+│   │       │           └───catalog
+│   │       │               ├───config
+│   │       │               ├───controller
+│   │       │               ├───domain
+│   │       │               ├───dto
+│   │       │               ├───mapper
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       │                   └───impl
+│   │       └───resources
+│   └───test
+│       └───java
+├───common
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───shopstack
+│   │       │           └───common
+│   │       │               ├───dto
+│   │       │               ├───exception
+│   │       │               ├───security
+│   │       │               └───utils
+│   │       └───resources
+│   └───test
+│       └───java
+├───docker
+├───docs
+│   └───openapi
+├───gradle
+│   └───wrapper
+├───helm
+│   └───shopstack
+│       └───templates
+├───inventory-service
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───shopstack
+│   │       │           └───inventory
+│   │       │               ├───config
+│   │       │               ├───controller
+│   │       │               ├───domain
+│   │       │               ├───dto
+│   │       │               ├───entity
+│   │       │               ├───event
+│   │       │               ├───exception
+│   │       │               ├───mapper
+│   │       │               ├───outbox
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       │                   └───impl
+│   │       └───resources
+│   └───test
+│       └───java
+├───k8s
+│   ├───base
+│   │   ├───mongo
+│   │   └───postgres
+│   └───overlays
+│       ├───dev
+│       ├───prod
+│       └───stage
+└───order-service
+    ├───src
+    │   └───main
+    │       ├───java
+    │       │   └───com
+    │       │       └───shopstack
+    │       │           └───order
+    │       │               ├───config
+    │       │               ├───controller
+    │       │               ├───domain
+    │       │               ├───dto
+    │       │               ├───mapper
+    │       │               ├───outbox
+    │       │               ├───repository
+    │       │               └───service
+    │       │                   └───impl
+    │       └───resources
+    └───test
+        └───java
+PS D:\Users\Lenovo\JAVA\shopStack> tree /F /A
+Folder PATH listing for volume yedek1
+Volume serial number is 48C6-792B
+D:.
+|   .gitignore
+|   build.gradle
+|   create.ps1
+|   gradlew
+|   gradlew.bat
+|   settings.gradle
+|   tree.txt
+|
++---.github
+|   \---workflows
+|           ci.yml
+|
++---.gradle
+|   |   file-system.probe
+|   |
+|   +---8.14
+|   |   |   gc.properties
+|   |   |
+|   |   +---checksums
+|   |   |       checksums.lock
+|   |   |       md5-checksums.bin
+|   |   |       sha1-checksums.bin
+|   |   |
+|   |   +---executionHistory
+|   |   |       executionHistory.bin
+|   |   |       executionHistory.lock
+|   |   |
+|   |   +---expanded
+|   |   +---fileChanges
+|   |   |       last-build.bin
+|   |   |
+|   |   +---fileHashes
+|   |   |       fileHashes.bin
+|   |   |       fileHashes.lock
+|   |   |
+|   |   \---vcsMetadata
+|   +---buildOutputCleanup
+|   |       buildOutputCleanup.lock
+|   |       cache.properties
+|   |       outputFiles.bin
+|   |
+|   \---vcs-1
+|           gc.properties
+|
++---.idea
+|       .gitignore
+|       compiler.xml
+|       gradle.xml
+|       IntelliLang.xml
+|       misc.xml
+|       vcs.xml
+|       workspace.xml
+|
++---api-gateway
+|   +---src
+|   |   \---main
+|   |       +---java
+|   |       |   \---com
+|   |       |       \---shopstack
+|   |       |           \---gateway
+|   |       |               +---config
+|   |       |               \---filters
+|   |       \---resources
+|   |               application.yml
+|   |
+|   \---test
+|       \---java
++---auth-service
+|   +---src
+|   |   \---main
+|   |       +---java
+|   |       |   \---com
+|   |       |       \---shopstack
+|   |       |           \---auth
+|   |       |               +---config
+|   |       |               |       JwtAuthenticationFilter.java
+|   |       |               |       JwtTokenProvider.java
+|   |       |               |       PasswordConfig.java
+|   |       |               |       SecurityConfig.java
+|   |       |               |
+|   |       |               +---controller
+|   |       |               |       AuthController.java
+|   |       |               |       UserController.java
+|   |       |               |
+|   |       |               +---domain
+|   |       |               |       BaseEntity.java
+|   |       |               |       RefreshToken.java
+|   |       |               |       Role.java
+|   |       |               |       RoleType.java
+|   |       |               |       TokenStatus.java
+|   |       |               |       User.java
+|   |       |               |
+|   |       |               +---dto
+|   |       |               |       AuthResponse.java
+|   |       |               |       LoginRequest.java
+|   |       |               |       RegisterRequest.java
+|   |       |               |       RoleDto.java
+|   |       |               |       UserDto.java
+|   |       |               |
+|   |       |               +---mapper
+|   |       |               |       RoleMapper.java
+|   |       |               |       UserMapper.java
+|   |       |               |
+|   |       |               +---repository
+|   |       |               |       RefreshTokenRepository.java
+|   |       |               |       RoleRepository.java
+|   |       |               |       UserRepository.java
+|   |       |               |
+|   |       |               \---service
+|   |       |                   |   AuthService.java
+|   |       |                   |   UserService.java
+|   |       |                   |
+|   |       |                   \---impl
+|   |       |                           AuthServiceImpl.java
+|   |       |                           UserServiceImpl.java
+|   |       |
+|   |       \---resources
+|   |               application.yml
+|   |
+|   \---test
+|       \---java
++---build
+|   \---reports
+|       \---problems
+|               problems-report.html
+|
++---catalog-service
+|   +---src
+|   |   \---main
+|   |       +---java
+|   |       |   \---com
+|   |       |       \---shopstack
+|   |       |           \---catalog
+|   |       |               +---config
+|   |       |               |       CorsConfig.java
+|   |       |               |       OpenApiConfig.java
+|   |       |               |       SecurityConfig.java
+|   |       |               |
+|   |       |               +---controller
+|   |       |               |       BrandController.java
+|   |       |               |       CategoryController.java
+|   |       |               |       ProductController.java
+|   |       |               |
+|   |       |               +---domain
+|   |       |               |       BaseEntity.java
+|   |       |               |       Brand.java
+|   |       |               |       Category.java
+|   |       |               |       Product.java
+|   |       |               |
+|   |       |               +---dto
+|   |       |               |       BrandDto.java
+|   |       |               |       CategoryDto.java
+|   |       |               |       ProductRequest.java
+|   |       |               |       ProductResponse.java
+|   |       |               |
+|   |       |               +---mapper
+|   |       |               |       BrandMapper.java
+|   |       |               |       CategoryMapper.java
+|   |       |               |       ProductMapper.java
+|   |       |               |
+|   |       |               +---repository
+|   |       |               |       BrandRepository.java
+|   |       |               |       CategoryRepository.java
+|   |       |               |       ProductRepository.java
+|   |       |               |
+|   |       |               \---service
+|   |       |                   |   BrandService.java
+|   |       |                   |   CategoryService.java
+|   |       |                   |   ProductService.java
+|   |       |                   |
+|   |       |                   \---impl
+|   |       |                           BrandServiceImpl.java
+|   |       |                           CategoryServiceImpl.java
+|   |       |                           ProductServiceImpl.java
+|   |       |
+|   |       \---resources
+|   |               application.yaml
+|   |
+|   \---test
+|       \---java
++---common
+|   +---src
+|   |   \---main
+|   |       +---java
+|   |       |   \---com
+|   |       |       \---shopstack
+|   |       |           \---common
+|   |       |               +---dto
+|   |       |               |       ApiResponse.java
+|   |       |               |       PageResponse.java
+|   |       |               |
+|   |       |               +---exception
+|   |       |               |       BaseException.java
+|   |       |               |       BusinessException.java
+|   |       |               |       ErrorResponse.java
+|   |       |               |       GlobalExceptionHandler.java
+|   |       |               |       NotFoundException.java
+|   |       |               |
+|   |       |               +---security
+|   |       |               |       JwtUser.java
+|   |       |               |       JwtUtils.java
+|   |       |               |
+|   |       |               \---utils
+|   |       |                       DateUtils.java
+|   |       |                       IdGenerator.java
+|   |       |
+|   |       \---resources
+|   \---test
+|       \---java
++---docker
+|       docker-compose.dev.yml
+|       Dockerfile.auth
+|       Dockerfile.catalog
+|       Dockerfile.gateway
+|       Dockerfile.inventory
+|       Dockerfile.order
+|
++---docs
+|   |   architecture.md
+|   |
+|   \---openapi
+|           auth-api.yaml
+|           catalog-api.yaml
+|           inventory-api.yaml
+|           order-api.yaml
+|
++---gradle
+|   \---wrapper
+|           gradle-wrapper.jar
+|           gradle-wrapper.properties
+|
++---helm
+|   \---shopstack
+|       |   Chart.yaml
+|       |   values.yaml
+|       |
+|       \---templates
+|               configmap.yaml
+|               deployment.yaml
+|               hpa.yaml
+|               ingress.yaml
+|               secrets.yaml
+|               service.yaml
+|
++---inventory-service
+|   +---src
+|   |   \---main
+|   |       +---java
+|   |       |   \---com
+|   |       |       \---shopstack
+|   |       |           \---inventory
+|   |       |               ├───config
+│   │       │               ├───controller
+│   │       │               ├───domain
+│   │       │               ├───dto
+│   │       │               ├───entity
+│   │       │               ├───event
+│   │       │               ├───exception
+│   │       │               ├───mapper
+│   │       │               ├───outbox
+│   │       │               ├───repository
+│   │       │               └───service
+│   │       │                   └───impl
+|   |       |
+|   |       \---resources
+|   |
+|   \---test
+|       \---java
++---k8s
+|   +---base
+|   |   |   namespace.yaml
+|   |   |
+|   |   +---mongo
+|   |   |       pvc.yaml
+|   |   |       service.yaml
+|   |   |       statefulset.yaml
+|   |   |
+|   |   \---postgres
+|   |           pvc.yaml
+|   |           service.yaml
+|   |           statefulset.yaml
+|   |
+|   \---overlays
+|       +---dev
+|       |       kustomization.yaml
+|       |
+|       +---prod
+|       |       kustomization.yaml
+|       |
+|       \---stage
+|               kustomization.yaml
+|
+\---order-service
+    +---src
+    |   \---main
+    |       +---java
+    |       |   \---com
+    |       |       \---shopstack
+    |       |           \---order
+    |       |               |   application.yaml
+    |       |               |
+    |       |               +---config
+    |       |               |       KafkaConfig.java
+    |       |               |
+    |       |               +---controller
+    |       |               |       OrderController.java
+    |       |               |
+    |       |               +---domain
+    |       |               |       Order.java
+    |       |               |       OrderStatus.java
+    |       |               |
+    |       |               +---dto
+    |       |               |       OrderRequest.java
+    |       |               |       OrderResponse.java
+    |       |               |
+    |       |               +---mapper
+    |       |               |       OrderMapper.java
+    |       |               |
+    |       |               +---outbox
+    |       |               |       OutboxEvent.java
+    |       |               |       OutboxPublisher.java
+    |       |               |
+    |       |               +---repository
+    |       |               |       OrderRepository.java
+    |       |               |
+    |       |               \---service
+    |       |                   |   OrderService.java
+    |       |                   |
+    |       |                   \---impl
+    |       |                           OrderServiceImpl.java
+    |       |
+    |       \---resources
+    \---test
+        \---java

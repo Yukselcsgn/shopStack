@@ -1,0 +1,31 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: inventory-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventorydb
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+kafka:
+  bootstrap-servers: localhost:9092
+
+inventory:
+  reservation:
+    default-ttl-minutes: 15
+    cleanup-ms: 60000
+
+outbox:
+  publish:
+    interval: 5000
+
+logging:
+  level:
+    root: INFO
+    com.shopstack.inventory: DEBUG

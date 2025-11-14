@@ -37,10 +37,10 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'com.auth0:java-jwt:4.4.0' // JWT token üretimi
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' // Google OAuth2 opsiyonu
+    implementation 'com.auth0:java-jwt:4.4.0'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client' // opsiyonel servis keşfi
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'io.micrometer:micrometer-registry-prometheus'
     implementation 'io.opentelemetry:opentelemetry-api:1.32.0'
     implementation 'io.opentelemetry:opentelemetry-sdk:1.32.0'
@@ -53,6 +53,16 @@ dependencies {
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
 
 
     implementation 'org.flywaydb:flyway-core'
