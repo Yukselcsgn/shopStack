@@ -5,7 +5,10 @@ import com.shopstack.inventory.entity.OutboxEventDocument;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Component
 @RequiredArgsConstructor
@@ -23,11 +26,21 @@ public class OutboxPublisher {
             String topic = topicForType(event.getType());
             String key = objectMapper.writeValueAsString(
                     objectMapper.readTree(event.getPayload()).path("orderId")
-            ); // key can be orderId for partitioning; safe fallback if missing
+            );
 
-            kafkaTemplate.send(topic, key, event.getPayload())
-                    .addCallback(result -> log.info("Published event {} to topic {}", event.getType(), topic),
-                            ex -> log.error("Failed to publish event {}: {}", event.getType(), ex.getMessage()));
+            ListenableFuture<SendResult<String, String>> future = (ListenableFuture<SendResult<String, String>>) kafkaTemplate.send(topic, key, event.getPayload());
+            future.addCallback(new ListenableFutureCallback<>() {
+                @Override
+                public void onSuccess(SendResult<String, String> result) {
+                    log.info("Published event {} to topic {}", event.getType(), topic);
+                }
+
+                @Override
+                public void onFailure(Throwable ex) {
+                    log.error("Failed to publish event {}: {}", event.getType(), ex.getMessage(), ex);
+                }
+            });
+
         } catch (Exception ex) {
             log.error("Error while publishing outbox event: {}", ex.getMessage(), ex);
             throw new RuntimeException(ex);
@@ -35,7 +48,6 @@ public class OutboxPublisher {
     }
 
     private String topicForType(String type) {
-        // Basit eşleme; istersen application.yml'den çek
         switch (type) {
             case "STOCK_RESERVED":
                 return "stock-reserved";

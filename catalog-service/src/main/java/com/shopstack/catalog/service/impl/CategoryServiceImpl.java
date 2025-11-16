@@ -28,7 +28,7 @@ public class CategoryServiceImpl implements CategoryService{
         }
 
         Category category = new Category(name);
-        Categoy saved = categoryRepository.save(category);
+        Category saved = categoryRepository.save(category);
 
         return categoryMapper.toDto(saved);
     }

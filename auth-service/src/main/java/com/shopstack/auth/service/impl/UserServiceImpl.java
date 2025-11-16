@@ -5,13 +5,15 @@ import com.shopstack.auth.domain.RoleType;
 import com.shopstack.auth.domain.User;
 import com.shopstack.auth.dto.RegisterRequest;
 import com.shopstack.auth.dto.UserDto;
-import com.shopstack.auth.exception.UserAlreadyExistsException;
+import com.shopstack.auth.dto.RegisterRequest;
 import com.shopstack.auth.mapper.UserMapper;
 import com.shopstack.auth.repository.RoleRepository;
 import com.shopstack.auth.repository.UserRepository;
 import com.shopstack.auth.service.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Set;
 
@@ -35,7 +37,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDto register(RegisterRequest request){
         if (userRepository.existsByEmail(request.email())) {
-            throw new UserAlreadyExistsException("User already exists: " + request.email());
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "User already exists: " + request.email());
         }
 
         Role userRole = roleRepository.findByName(RoleType.USER)

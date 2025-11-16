@@ -3,12 +3,8 @@ package com.shopstack.catalog.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = 'categories')
-public class Category extends BaseEntity{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Table(name = "categories")
+public class Category extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -19,13 +15,11 @@ public class Category extends BaseEntity{
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {this.name = name;}
+    public void setName(String name) {
+        this.name = name;
+    }
 }

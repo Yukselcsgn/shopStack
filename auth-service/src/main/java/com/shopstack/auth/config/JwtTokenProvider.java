@@ -28,7 +28,7 @@ public class JwtTokenProvider {
                 .claim("userId", user.getId())
                 .claim("roles", user.getRoles().stream().map(r -> r.getName().name()).toList())
                 .setIssuedAt(Date.from(now))
-                .setExpiration(Date.from(expiry))
+                .setExpiration(Date.from(expiration))
                 .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
     }
@@ -37,9 +37,10 @@ public class JwtTokenProvider {
         return UUID.randomUUID().toString();
     }
 
-    public String getEmailFromToken(String token){
-        return Jwts.parser()
+    public String getEmailFromToken(String token) {
+        return Jwts.parserBuilder()
                 .setSigningKey(secret)
+                .build()
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();

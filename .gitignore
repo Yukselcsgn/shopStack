@@ -8,5 +8,9 @@
 
 
 .gitignore
-/gradle
+/*gradle
 /gradle-dep-scout
+
+*.gradle/
+*build/
+*out/

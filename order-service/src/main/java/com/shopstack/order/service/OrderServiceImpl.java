@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @Service
 @Transactional
-public class OrderService implements OrderService{
+public class OrderServiceImpl implements OrderService{
 
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
@@ -50,7 +50,7 @@ public class OrderService implements OrderService{
     @Override
     public void cancelOrder(UUID id){
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeExpection("Order not found"));
+                .orElseThrow(() -> new RuntimeException("Order not found"));
         order.setStatus(OrderStatus.CANCELLED);
         orderRepository.save(order);
     }

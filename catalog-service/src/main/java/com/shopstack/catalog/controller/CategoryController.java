@@ -18,7 +18,7 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ReesponseEntity<CategoryDto> create(@RequestParam String name) {
+    public ResponseEntity<CategoryDto> create(@RequestParam String name) {
         return ResponseEntity.ok(categoryService.create(name));
     }
 

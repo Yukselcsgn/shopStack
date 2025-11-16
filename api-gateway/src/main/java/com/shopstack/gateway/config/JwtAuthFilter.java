@@ -1,4 +1,4 @@
-package com.example.apigateway.config;
+package com.shopstack.gateway.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

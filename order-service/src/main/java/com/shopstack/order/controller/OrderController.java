@@ -14,17 +14,18 @@ import java.util.UUID;
 public class OrderController {
 
     private final OrderService orderService;
-    public OrderController(OrderService orderService){
+
+    public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
 
     @PostMapping
-    public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderRequest request){
+    public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderRequest request) {
         return ResponseEntity.ok(orderService.createOrder(request));
     }
 
     @GetMapping("/{id}")
-    public public class OrderController(@PathVariable UUID id) {
+    public ResponseEntity<OrderResponse> getOrderById(@PathVariable UUID id) {
         return ResponseEntity.ok(orderService.getOrderById(id));
     }
 

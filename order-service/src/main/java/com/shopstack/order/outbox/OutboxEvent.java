@@ -67,3 +67,4 @@ public class OutboxEvent {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+}

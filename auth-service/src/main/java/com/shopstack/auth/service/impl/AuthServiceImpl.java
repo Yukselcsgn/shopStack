@@ -7,7 +7,7 @@ import com.shopstack.auth.dto.AuthResponse;
 import com.shopstack.auth.dto.LoginRequest;
 import com.shopstack.auth.repository.RefreshTokenRepository;
 import com.shopstack.auth.repository.UserRepository;
-import com.shopstack.auth.security.JwtTokenProvider;
+import com.shopstack.auth.config.JwtTokenProvider;
 import com.shopstack.auth.service.AuthService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
